@@ -39,7 +39,7 @@ def integrate(function, lower, upper):
 class TestUtils(unittest.TestCase):
     def test_fact(self):
         self.assertEqual(fact(0), 0)
-        self.assertEqual(fact(3), 6) #Git regn,i
+        self.assertEqual(fact(3), 6)
         self.assertEqual(fact(5), 120)
         with self.assertRaises(ValueError):
             fact(-1)
