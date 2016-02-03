@@ -14,7 +14,12 @@ def fact(n):
     if n < 0:
         raise ValueError
     else:
-        return 0
+        if n<2:
+            return 1
+        else:
+            return n*fact(n-1)
+            
+            
 
 def roots(a, b, c):
     """Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -38,7 +43,7 @@ def integrate(function, lower, upper):
 
 class TestUtils(unittest.TestCase):
     def test_fact(self):
-        self.assertEqual(fact(0), 0)
+        self.assertEqual(fact(0), 1)
         self.assertEqual(fact(3), 6)
         self.assertEqual(fact(5), 120)
         with self.assertRaises(ValueError):
@@ -60,3 +65,4 @@ if __name__ == '__main__':
     suite= unittest.TestLoader().loadTestsFromTestCase(TestUtils)
     runner= unittest.TextTestRunner()
     exit(not runner.run(suite).wasSuccessful())
+    
